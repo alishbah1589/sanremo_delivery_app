@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanremo_food_delivery/cart_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,18 +7,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3, 
+      length: 3,
       child: Scaffold(
         drawer: Drawer(
           child: ListView(
-            children: const [
-              DrawerHeader(
+            children: [
+              const DrawerHeader(
                 decoration: BoxDecoration(color: Colors.pink),
-                child: Text('Navigation Menu', style: TextStyle(color: Colors.white)),
+                child: Text('Navigation Menu',
+                    style: TextStyle(color: Colors.white)),
               ),
-              ListTile(leading: Icon(Icons.home), title: Text('Home')),
-              ListTile(leading: Icon(Icons.favorite), title: Text('Favorites')),
-              ListTile(leading: Icon(Icons.shopping_cart), title: Text('Cart')),
+              const ListTile(leading: Icon(Icons.home), title: Text('Home')),
+              const ListTile(
+                  leading: Icon(Icons.favorite), title: Text('Favorites')),
+              ListTile(
+                  leading: IconButton(
+                    icon: const Icon(Icons.shopping_cart),
+                    onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => CartPage(),
+                    ));
+              },
+                  ),
+                  title: const Text('Cart')),
             ],
           ),
         ),
@@ -30,8 +44,8 @@ class HomePage extends StatelessWidget {
               onPressed: () => Scaffold.of(context).openDrawer(),
             ),
           ),
-          title: Row(
-            children: const [
+          title: const Row(
+            children: [
               Icon(Icons.location_on, color: Colors.white),
               SizedBox(width: 8),
               Expanded(
@@ -45,10 +59,16 @@ class HomePage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.shopping_cart_outlined, color: Colors.white),
+              icon:
+                  const Icon(Icons.shopping_cart_outlined, color: Colors.white),
               onPressed: () {
-                // Navigate to cart
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => CartPage(),
+                    ));
               },
+              //empty cart page remaining  to navigate
             ),
           ],
         ),
@@ -71,10 +91,20 @@ class HomePage extends StatelessWidget {
           indicatorColor: Colors.transparent,
           labelColor: Colors.pink,
           unselectedLabelColor: Colors.grey,
-          tabs: const [
-            Tab(icon: Icon(Icons.home)),
-            Tab(icon: Icon(Icons.favorite_border)),
-            Tab(icon: Icon(Icons.shopping_cart)),
+          tabs: [
+            const Tab(icon: Icon(Icons.home)),
+            const Tab(icon: Icon(Icons.favorite_border)),
+            Tab(
+                icon: IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => CartPage(),
+                    ));
+              },
+            )),
           ],
         ),
       ),
