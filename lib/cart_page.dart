@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanremo_food_delivery/components.dart';
+import 'package:sanremo_food_delivery/home_page.dart';
 
 import 'add_to_cart_list_tile.dart';
 
@@ -44,11 +45,18 @@ class _CartPageState extends State<CartPage> {
             snap: false,
             primary: true,
             leading: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>const HomePage(),
+                    ));
+                },
                 icon: const Icon(
                   Icons.close_rounded,
                   color: Colors.black,
                 )),
+               
             title: const Text(
               "Cart ",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
