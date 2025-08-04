@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanremo_food_delivery/components.dart';
 import 'package:sanremo_food_delivery/home_page.dart';
-
 import 'add_to_cart_list_tile.dart';
 
 class CartPage extends StatefulWidget {
@@ -56,7 +55,6 @@ class _CartPageState extends State<CartPage> {
                   Icons.close_rounded,
                   color: Colors.black,
                 )),
-               
             title: const Text(
               "Cart ",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
@@ -68,7 +66,6 @@ class _CartPageState extends State<CartPage> {
               padding: const EdgeInsets.all(16.0),
               child: Card.outlined(
                   elevation: 10,
-                  surfaceTintColor: Colors.pink[200],
                   child: ListTile(
                     minTileHeight: 40,
                     leading: Container(
