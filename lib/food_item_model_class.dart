@@ -4,12 +4,13 @@ import 'dart:convert';
 class FoodItem {
   String itemImagePath;
   String itemName;
-  String estimateTime ;
-  FoodItem({
-    required this.itemImagePath,
-    required this.itemName,
-    this.estimateTime = "15-30 min , Fast Food "
-  });
+  String estimateTime;
+  double rating;
+  FoodItem(
+      {required this.itemImagePath,
+      required this.itemName,
+      this.estimateTime = "15-30 min , Fast Food ",
+      this.rating = 4.4});
 
   FoodItem copyWith({
     String? itemImagePath,

@@ -53,31 +53,62 @@ class ExploreRestaurantListTile extends StatelessWidget {
         onTap: () {
           //navigation
         },
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        title: SafeArea(
+          child: Stack(children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                // navigation to next page
+              },
               focusColor: const Color.fromARGB(255, 236, 151, 179),
-              hoverColor: const Color.fromARGB(255, 88, 84, 86),
-              child: Image.network(
-                foodItem.itemImagePath,
-                fit: BoxFit.contain,
-                height: 100,
+              hoverColor: const Color.fromARGB(255, 211, 207, 209),
+              child: AspectRatio(
+                aspectRatio: 16 / 8,
+                child: Image.network(
+                  foodItem.itemImagePath,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-          ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton.outlined(
+                    style: const ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Colors.white)),
+                    onPressed: () {
+                      //navigation
+                    },
+                    icon: const Icon(
+                      Icons.favorite_border_outlined,
+                      color: Colors.black,
+                    )),
+              ],
+            ),
+          ]),
         ),
         subtitle: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(foodItem.itemName,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
-                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(foodItem.itemName,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                    )),
+                const Spacer(
+                  flex: 2,
+                ),
+                const Icon(Icons.star_purple500_sharp,
+                    color: Colors.amber, size: 14),
+                Text(foodItem.rating.toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 12))
+              ],
+            ),
             Text(foodItem.estimateTime,
                 style:
                     const TextStyle(fontWeight: FontWeight.w200, fontSize: 12))

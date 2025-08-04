@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:sanremo_food_delivery/cart_page.dart';
-import 'package:sanremo_food_delivery/custom_food_item_list_tile.dart';
 import 'package:sanremo_food_delivery/food_item_list_view.dart';
 import 'package:sanremo_food_delivery/list_food_items.dart';
 
@@ -147,7 +146,8 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(2),
                   child: ConstrainedBox(
                       constraints: const BoxConstraints.expand(height: 500),
-                      child: ExploreResturantListView(exploreItem: brandList)),
+                      child: ExploreResturantListView(
+                          exploreItem: restaurantItemList)),
                 ),
               ],
             ),

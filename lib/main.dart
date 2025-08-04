@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sanremo_food_delivery/home_page.dart';
 
 import 'welcome_screen.dart';
 

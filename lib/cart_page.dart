@@ -46,10 +46,10 @@ class _CartPageState extends State<CartPage> {
             leading: IconButton(
                 onPressed: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>const HomePage(),
-                    ));
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const HomePage(),
+                      ));
                 },
                 icon: const Icon(
                   Icons.close_rounded,
