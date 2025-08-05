@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanremo_food_delivery/favourites_manager.dart';
 import 'package:sanremo_food_delivery/food_item_model_class.dart';
 
 class CustomFoodItemListTile extends StatelessWidget {
@@ -69,20 +70,34 @@ class ExploreRestaurantListTile extends StatelessWidget {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton.outlined(
-                    style: const ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Colors.white)),
-                    onPressed: () {
-                      //navigation
-                    },
-                    icon: const Icon(
-                      Icons.favorite_border_outlined,
-                      color: Colors.black,
-                    )),
-              ],
+            ValueListenableBuilder<List<FoodItem>>(
+              valueListenable: FavouritesManager.favouriteItemsNotifier,
+              builder: (context, favouriteItems, _) {
+                final isFavourite = favouriteItems.contains(foodItem);
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton.outlined(
+                      style: const ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Colors.white),
+                      ),
+                      onPressed: () {
+                        if (isFavourite) {
+                          FavouritesManager.removeFromFavorites(foodItem);
+                        } else {
+                          FavouritesManager.addToFavorites(foodItem);
+                        }
+                      },
+                      icon: Icon(
+                        isFavourite
+                            ? Icons.favorite
+                            : Icons.favorite_border_outlined,
+                        color: isFavourite ? Colors.red : Colors.black,
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
           ]),
         ),
