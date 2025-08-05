@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sanremo_food_delivery/custom_food_item_list_tile.dart';
 import 'package:sanremo_food_delivery/favourites_manager.dart';
 import 'package:sanremo_food_delivery/food_item_model_class.dart';
+import 'package:sanremo_food_delivery/home_page.dart';
 
 class FavouritesScreen extends StatelessWidget {
   const FavouritesScreen({super.key});
@@ -13,16 +14,32 @@ class FavouritesScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Custom Title
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Favourites',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.pink.shade600,
+          Row(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const HomePage(),
+                        ));
+                  },
+                  icon: const Icon(
+                    color: Colors.pinkAccent,
+                    Icons.arrow_back_ios_new_rounded,
+                  )),
+              const Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'Favourites',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.pinkAccent,
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
 
           // Favourite items list

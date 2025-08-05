@@ -92,7 +92,7 @@ class ExploreRestaurantListTile extends StatelessWidget {
                         isFavourite
                             ? Icons.favorite
                             : Icons.favorite_border_outlined,
-                        color: isFavourite ? Colors.red : Colors.black,
+                        color: isFavourite ? Colors.pinkAccent : Colors.black,
                       ),
                     ),
                   ],
