@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sanremo_food_delivery/components.dart';
 import 'package:sanremo_food_delivery/home_page.dart';
+import 'package:sanremo_food_delivery/mycode.dart';
 import 'add_to_cart_list_tile.dart';
 
 class CartPage extends StatefulWidget {
@@ -342,7 +343,7 @@ class _CartPageState extends State<CartPage> {
                 child: roundedButton(
                     text: "Confirm payment and address",
                     onPressed: () {
-                      //tuba's code navigate
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=> MyPart()));
                     }),
               ),
             )
