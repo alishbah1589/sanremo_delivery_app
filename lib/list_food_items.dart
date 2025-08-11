@@ -72,7 +72,7 @@ List<FoodItem> restaurantItemList = [
   FoodItem(
       itemImagePath:
           "https://images.unsplash.com/photo-1586530844517-791ce35ad21d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNoaWNrZW4lMjBrYXJhY2hpfGVufDB8fDB8fHww",
-      itemName: "Kabish Continental Restaurant",
+      itemName: "Kebabish Continental Restaurant",
       estimateTime: "20-25 , Desi food",
       rating: 5),
   FoodItem(

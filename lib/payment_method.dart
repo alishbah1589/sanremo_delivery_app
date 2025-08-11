@@ -24,11 +24,11 @@ class PaymentMethod extends StatelessWidget {
                 Icon(Icons.payment),
 
                 
-                Text(
+             const   Text(
                   "Payment method",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Padding(padding: EdgeInsetsGeometry.only(left: 200)),
+                Padding(padding: EdgeInsets.only(left: 200)),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -36,7 +36,7 @@ class PaymentMethod extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => PaymentApp()),
                     );
                   },
-                  child: Text(
+                  child:const Text(
                     'change',
                     style: TextStyle(fontWeight: FontWeight.w500),
                   ),
@@ -45,11 +45,11 @@ class PaymentMethod extends StatelessWidget {
             ),
 
             const SizedBox(height: 8),
-            Row(
+          const  Row(
               children: [
                 Icon(Icons.money),
                 Text('cash'),
-                Padding(padding: EdgeInsetsGeometry.only(left: 280)),
+                Padding(padding: EdgeInsets.only(left: 280)),
                 Text("Rs.305.99"),
               ],
             ),

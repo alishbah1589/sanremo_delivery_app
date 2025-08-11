@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
             children: [
               const DrawerHeader(
                 decoration: BoxDecoration(color: Colors.pinkAccent),
-                child: Text('Navigation Menu', style: TextStyle(color: Colors.white)),
+                child: Text('Navigation Menu',
+                    style: TextStyle(color: Colors.white)),
               ),
               const ListTile(leading: Icon(Icons.home), title: Text('Home')),
               ListTile(
@@ -71,7 +72,8 @@ class HomePage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.shopping_cart_outlined, color: Colors.white),
+              icon:
+                  const Icon(Icons.shopping_cart_outlined, color: Colors.white),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -156,7 +158,7 @@ class _HomeTabState extends State<_HomeTab> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔍 Search Bar
+            //  Search Bar
             Padding(
               padding: const EdgeInsets.all(8),
               child: SizedBox(
@@ -177,7 +179,7 @@ class _HomeTabState extends State<_HomeTab> {
               ),
             ),
 
-            // 🍔 Food Items
+            // Food Items
             Padding(
               padding: const EdgeInsets.all(10),
               child: SizedBox(
@@ -204,7 +206,7 @@ class _HomeTabState extends State<_HomeTab> {
               ),
             ),
 
-            // 🍽️ Explore Restaurants (Filtered)
+            //  Explore Restaurants (Filtered)
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: Text(
@@ -219,7 +221,8 @@ class _HomeTabState extends State<_HomeTab> {
               padding: const EdgeInsets.all(2),
               child: ConstrainedBox(
                 constraints: const BoxConstraints.expand(height: 500),
-                child: ExploreResturantListView(exploreItem: filteredRestaurants),
+                child:
+                    ExploreResturantListView(exploreItem: filteredRestaurants),
               ),
             ),
           ],
@@ -228,4 +231,3 @@ class _HomeTabState extends State<_HomeTab> {
     );
   }
 }
-
